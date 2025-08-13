@@ -1,17 +1,18 @@
 
 import Fastify from "fastify";
 import type { FastifyRequestType } from "fastify/types/type-provider";
-import { productsRoutes } from "./routes/productRoutes";
-import { productVariantRoutes } from "./routes/productVariantRoutes";
+import { productsRoutes } from "./routes/product.routes";
+import { productVariantRoutes } from "./routes/product_variant.routes";
 import {fastifyCors} from '@fastify/cors'
+import { categoryRoutes } from "./routes/category.routes";
+import { newProductsRoutes } from "./routes/new_products.routes";
 const app = Fastify();
 
-app.get("/", (req: FastifyRequestType, reply: any) => {
-  return "Hello World!";
-});
 
 app.register(productsRoutes)
 app.register(productVariantRoutes)
+app.register(categoryRoutes)
+app.register(newProductsRoutes)
 app.register(fastifyCors)
 
 async function main() {

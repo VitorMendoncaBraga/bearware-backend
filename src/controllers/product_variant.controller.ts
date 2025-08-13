@@ -1,5 +1,5 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
-import { getAllProductsVariant } from "../models/productVariantModel";
+import { getAllProductsVariant } from "../models/product_variant.model";
 
 export async function listAllProductsVariant(req: FastifyRequest, reply: FastifyReply){
     try{
